@@ -19,12 +19,15 @@ def search_list(a, b, n1, n2):
                 if(a[i] != b[j]):
                     flag = False
                 else:
+                    if(j == n2-1):
+                        return flag
                     flag = True
-                if(a[i] == b[j] and i < n1-1 and j < n2-1):
-                    i += 1
-                    j += 1
-                    if(a[i] != b[j]):
-                        return False
+                    if(i < n1-1):
+                        i += 1
+                    if(j < n2-1): 
+                        j += 1
+                        if(a[i] != b[j]):
+                            return False                 
         return flag
 
 def search_list1(a, b, n1):
